@@ -28,11 +28,11 @@ const Projects = () => {
         <div className="project-wrapper">
           <Title title="Projects" />
           {projects.map((project) => {
-            const { title, info, info2, url, repo, img, id } = project;
+            const { title, info, info2, url, repo, img, techs, id } = project;
 
             return (
               <Row key={id}>
-                <Col lg={4} sm={12}>
+                <Col lg={4} sm={12} className="blurb">
                   <Fade
                     left={isDesktop}
                     bottom={isMobile}
@@ -48,6 +48,16 @@ const Projects = () => {
                             'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
                         </p>
                         <p className="mb-4">{info2 || ''}</p>
+                        {techs && (
+                          <div className="technologies-used">
+                            <p>Technologies used</p>
+                            <ul>
+                              {techs.map((tech) => {
+                                return <li>{tech}</li>;
+                              })}
+                            </ul>
+                          </div>
+                        )}
                       </div>
                       <a
                         target="_blank"

@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: $white-color;
   font-weight: 400;
   color: $dark-blue-text;
   padding: 0rem 5.6rem;
@@ -14,6 +13,10 @@
   bottom: 0;
   right: 0;
   z-index: -1;
+
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 
   // If you want to set a background image on the hero section, uncomment these with yout custom image
 
@@ -25,6 +28,17 @@
     padding: 0rem $default-font-size;
   }
 
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
   .hero-title {
     font-size: 5.6rem;
     font-weight: 700;
@@ -61,5 +75,34 @@
         font-size: 2rem;
       }
     }
+  }
+}
+
+.weather-container {
+  display: inline-grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.weather-container img {
+  animation: MoveUpDown 2s linear infinite;
+  position: absolute;
+  justify-self: center;
+  margin-bottom: 15%;
+  z-index: 0;
+}
+
+.weatherContainer p {
+  margin-bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 5px;
+  }
+  50% {
+    bottom: 10px;
   }
 }

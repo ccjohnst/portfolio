@@ -38,28 +38,15 @@ const About = () => {
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
-                  {paragraphOne ||
-                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
+                  I am a front-end developer from London. I am particularly passionate about
+                  Javascript and have been greatly enjoying learning Reactjs.
                 </p>
                 <p className="about-wrapper__info-text">
-                  {paragraphTwo ||
-                    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
+                  I have been teaching myself front-end development whilst working a busy full time
+                  job, which has been a challenging, but highly enjoyable journey. Please scroll or
+                  navigate to the project section of my page to see a recent selection of projects.
+                  All code can be found for my GitHub, linked below in the contact section.
                 </p>
-                <p className="about-wrapper__info-text">
-                  {paragraphThree || 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.'}
-                </p>
-                {resume && (
-                  <span className="d-flex mt-3">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cta-btn cta-btn--resume"
-                      href={resume}
-                    >
-                      Resume
-                    </a>
-                  </span>
-                )}
               </div>
             </Fade>
           </Col>

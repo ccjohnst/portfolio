@@ -18,12 +18,20 @@
 
     .row {
       margin-bottom: 8rem;
-
+      background: rgba(0, 0, 0, 0.03);
+      padding: 1rem;
       @include respond(phone) {
         margin-bottom: 4rem;
       }
     }
-
+    .technologies-used {
+      p {
+        font-weight: bold;
+      }
+      ul {
+        font-size: 1.6rem;
+      }
+    }
     &__text {
       text-align: left;
 

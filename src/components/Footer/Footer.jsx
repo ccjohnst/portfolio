@@ -1,15 +1,12 @@
 import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
+import Obfuscate from 'react-obfuscate';
 import PortfolioContext from '../../context/context';
-import GithubButtons from '../GithubButtons/GithubButtons';
-
-import { githubButtons } from '../../mock/data';
 
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);
-  const { networks } = footer;
-  const { isEnabled } = githubButtons;
+  // const { networks } = footer;
 
   return (
     <footer className="footer navbar-static-bottom">
@@ -20,7 +17,42 @@ const Footer = () => {
           </Link>
         </span>
         <div className="social-links">
-          {networks &&
+          <a
+            // key={id}
+            href="https://twitter.com/cccjohnston"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="twitter"
+          >
+            <i className="fa fa-twitter fa-inverse" />
+          </a>
+          <a
+            // key={id}
+            href="https://www.linkedin.com/in/ccjohnst/"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="linkedin"
+          >
+            <i className="fa fa-linkedin fa-inverse" />
+          </a>
+          <a
+            // key={id}
+            href="https://github.com/ccjohnst"
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label="github"
+          >
+            <i className="fa fa-github fa-inverse" />
+          </a>
+
+          <Obfuscate
+            // key={id}
+            email="mailto:christopherjohnston@protonmail.com"
+          >
+            <i className="fa fa-envelope fa-inverse" />
+          </Obfuscate>
+
+          {/* {networks &&
             networks.map((network) => {
               const { id, name, url } = network;
               return (
@@ -34,17 +66,9 @@ const Footer = () => {
                   <i className={`fa fa-${name || 'refresh'} fa-inverse`} />
                 </a>
               );
-            })}
+            })} */}
         </div>
         <hr />
-        <p className="footer__text">
-          © {new Date().getFullYear()} - Template developed by{' '}
-          <a href="https://github.com/cobidev" target="_blank" rel="noopener noreferrer">
-            Jacobo Martínez
-          </a>
-        </p>
-
-        {isEnabled && <GithubButtons />}
       </Container>
     </footer>
   );

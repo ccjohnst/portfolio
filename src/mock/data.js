@@ -2,22 +2,14 @@ import { nanoid } from 'nanoid';
 
 // HEAD DATA
 export const headData = {
-  title: '', // e.g: 'Name | Developer'
-  lang: '', // e.g: en, es, fr, jp
+  title: 'Chris Johnston - Front End Dev', // e.g: 'Name | Developer'
+  lang: 'en', // e.g: en, es, fr, jp
   description: '', // e.g: Welcome to my website
-};
-
-// HERO DATA
-export const heroData = {
-  title: '',
-  name: '',
-  subtitle: '',
-  cta: '',
 };
 
 // ABOUT DATA
 export const aboutData = {
-  img: 'profile.jpg',
+  img: 'profile.png',
   paragraphOne: '',
   paragraphTwo: '',
   paragraphThree: '',
@@ -28,30 +20,33 @@ export const aboutData = {
 export const projectsData = [
   {
     id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
+    img: 'cvbuilder.png',
+    title: 'CV Builder',
+    info: "A CV making tool that makes good use of React's state management and features an option to save the CV as a PDF.",
     info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    url: 'https://ccjohnst.github.io/cv-creator/',
+    repo: 'https://github.com/ccjohnst/cv-creator', // if no repo, the button will not show up
+    techs: ['React', 'Javascript', 'Sass'],
   },
   {
     id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
+    img: 'tmmarketing.png',
+    title: 'Mock Marketing Website',
+    info: 'A website for a mock marketing company built using React, Chakra UI framework and mobile first design.',
     info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    url: 'https://ccjohnst.github.io/true-marketing/#/',
+    repo: 'https://github.com/ccjohnst/true-marketing', // if no repo, the button will not show up
+    techs: ['Javascript', 'React', 'Chakra UI'],
   },
   {
     id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
+    img: 'coopersonarchitects.png',
+    title: 'Mock Architects Website',
+    info: 'A mock Architects Website built with NextJS and vanilla CSS.',
     info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    url: 'https://cooperson-clarke.vercel.app/',
+    repo: 'https://github.com/ccjohnst/cooperson-clarke', // if no repo, the button will not show up
+    techs: ['Javascript', 'React', 'NextJS'],
   },
 ];
 
@@ -68,27 +63,17 @@ export const footerData = {
     {
       id: nanoid(),
       name: 'twitter',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'codepen',
-      url: '',
+      url: 'https://twitter.com/cccjohnston',
     },
     {
       id: nanoid(),
       name: 'linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/ccjohnst/',
     },
     {
       id: nanoid(),
       name: 'github',
-      url: '',
+      url: 'https://github.com/ccjohnst',
     },
   ],
-};
-
-// Github start/fork buttons
-export const githubButtons = {
-  isEnabled: true, // set to false to disable the GitHub stars/fork buttons
 };
