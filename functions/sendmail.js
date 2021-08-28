@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 
+const { PASS, USER } = process.env;
+
 exports.handler = function (event, context, callback) {
   const data = JSON.parse(event.body);
 
@@ -7,8 +9,8 @@ exports.handler = function (event, context, callback) {
     host: 'smtp.zoho.eu',
     port: '465',
     auth: {
-      user: 'christopherjohnston',
-      pass: '',
+      user: USER,
+      pass: PASS,
     },
   });
 
@@ -22,7 +24,7 @@ exports.handler = function (event, context, callback) {
         <h3>Sender Email: ${data.email}<h3>
         <p>Subject: ${data.message}</p>`,
     },
-    function (error, info) {
+    function (error) {
       if (error) {
         callback(error);
       } else {
