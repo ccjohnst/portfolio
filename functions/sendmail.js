@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const { PASS, USER } = process.env;
+const { GATSBY_PASS, GATSBY_USER } = process.env;
 
 exports.handler = function (event, context, callback) {
   const data = JSON.parse(event.body);
@@ -9,8 +9,8 @@ exports.handler = function (event, context, callback) {
     host: 'smtp.zoho.eu',
     port: '465',
     auth: {
-      user: USER,
-      pass: PASS,
+      user: GATSBY_USER,
+      pass: GATSBY_PASS,
     },
   });
 
