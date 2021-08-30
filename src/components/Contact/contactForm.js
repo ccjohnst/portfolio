@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import axios from 'axios';
 
 const ContactForm = () => {
   // State for form data
@@ -25,7 +24,7 @@ const ContactForm = () => {
       [name]: value,
     });
     // reset error state once corrected
-    if (!!errors[name])
+    if (!errors[name])
       setErrors({
         ...errors,
         [name]: null,
@@ -47,7 +46,6 @@ const ContactForm = () => {
     // destructure state properties
     const { email, name, message } = data;
     const newErrors = {};
-
     // name errors
     if (!name || name === '') newErrors.name = 'Cannot be blank';
     else if (name.length < 5) newErrors.name = 'Name is too short';
@@ -68,52 +66,21 @@ const ContactForm = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      console.log(e);
+      // console.log(e);
       setData({
         ...data,
         buttonText: 'Sending...',
       });
-
-      // axios sending data
-      axios
-        .post('/api/sendmail', data)
-        .then((res) => {
-          if (res.data.result !== 'success') {
-            setData({
-              ...data,
-              buttonText: 'Failed to send',
-              sent: false,
-              err: 'fail',
-            });
-            setTimeout(() => {
-              resetForm();
-            }, 6000);
-          } else {
-            setData({
-              ...data,
-              sent: true,
-              buttonText: 'Sent',
-              err: 'success',
-            });
-            setTimeout(() => {
-              resetForm();
-            }, 6000);
-          }
-        })
-        .catch((err) => {
-          console.log(err.response.status);
-          setData({
-            ...data,
-            buttonText: 'Failed to send',
-            err: 'fail',
-          });
-        });
+      resetForm();
     }
   };
 
   return (
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicName">
+    <Form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
+      <Form.Control type="hidden" name="bot-field" />
+      <Form.Control type="hidden" name="form-name" value="contact" />
+
+      <Form.Group className="mb-3 contact" controlId="formBasicName">
         <Form.Label>Name</Form.Label>
         <Form.Control
           type="Text"
@@ -144,6 +111,7 @@ const ContactForm = () => {
         />
         <Form.Control.Feedback type="invalid">{errors.message}</Form.Control.Feedback>
       </Form.Group>
+      <div data-netlify-recaptcha="true" />
       <Button variant="primary" type="submit" onClick={formSubmit}>
         {data.buttonText}
       </Button>
