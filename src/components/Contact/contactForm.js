@@ -11,9 +11,13 @@ const ContactForm = () => {
       <Form.Group className="mb-3 contact" controlId="formBasicName">
         <Form.Label>Name</Form.Label>
         <Form.Control type="Text" placeholder="Enter name" name="name" required />
-
-        <Form.Label>Email address</Form.Label>
+      </Form.Group>
+      <Form.Group className="mb-3 contact" controlId="formBasicEmail">
+        <Form.Label>Email Address</Form.Label>
         <Form.Control type="email" placeholder="name@example.com" name="email" required />
+      </Form.Group>
+      <Form.Group className="mb-3 contact" controlId="formBasicMessage">
+        {' '}
         <Form.Label>Message</Form.Label>
         <Form.Control
           as="textarea"
@@ -23,8 +27,11 @@ const ContactForm = () => {
           required
         />
       </Form.Group>
+
       <div data-netlify-recaptcha="true" />
-      <Button variant="primary" type="submit" />
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
     </Form>
   );
 };
