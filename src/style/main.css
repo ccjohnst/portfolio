@@ -768,10 +768,12 @@ section {
 
 #skills .skills-container .list-group-item {
   font-weight: bold;
+  border: none;
 }
 
 #skills .skills-container .list-subgroup .list-group-item {
   border: none;
+  background: none;
   font-weight: normal;
 }
 /*# sourceMappingURL=main.css.map */
