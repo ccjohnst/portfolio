@@ -77,3 +77,5 @@ export const footerData = {
     },
   ],
 };
+
+// SKILLS DATA
