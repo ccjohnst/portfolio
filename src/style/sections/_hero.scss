@@ -97,6 +97,17 @@
   margin-bottom: 0;
 }
 
+.button-container{
+  display: flex;
+
+}
+
+.button-container p {
+  margin-right: 1rem;
+ 
+  
+}
+
 @keyframes MoveUpDown {
   0%,
   100% {
