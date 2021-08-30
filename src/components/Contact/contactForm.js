@@ -31,49 +31,49 @@ const ContactForm = () => {
       });
   };
 
-  const resetForm = () => {
-    setData({
-      name: '',
-      email: '',
-      message: '',
-      sent: false,
-      buttonText: 'Submit',
-      err: '',
-    });
-  };
+  // const resetForm = () => {
+  //   setData({
+  //     name: '',
+  //     email: '',
+  //     message: '',
+  //     sent: false,
+  //     buttonText: 'Submit',
+  //     err: '',
+  //   });
+  // };
 
-  const findFormErrors = () => {
-    // destructure state properties
-    const { email, name, message } = data;
-    const newErrors = {};
-    // name errors
-    if (!name || name === '') newErrors.name = 'Cannot be blank';
-    else if (name.length < 5) newErrors.name = 'Name is too short';
-    else if (name.length > 30) newErrors.name = 'Name is too long';
+  // const findFormErrors = () => {
+  //   // destructure state properties
+  //   const { email, name, message } = data;
+  //   const newErrors = {};
+  //   // name errors
+  //   if (!name || name === '') newErrors.name = 'Cannot be blank';
+  //   else if (name.length < 5) newErrors.name = 'Name is too short';
+  //   else if (name.length > 30) newErrors.name = 'Name is too long';
 
-    // email errors
-    if (!email || email === '') newErrors.email = 'Email cannot be blank';
+  //   // email errors
+  //   if (!email || email === '') newErrors.email = 'Email cannot be blank';
 
-    // message errors
-    if (!message || message === '') newErrors.message = 'Message cannot be blank';
+  //   // message errors
+  //   if (!message || message === '') newErrors.message = 'Message cannot be blank';
 
-    return newErrors;
-  };
-  const formSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = findFormErrors();
+  //   return newErrors;
+  // };
+  // const formSubmit = (e) => {
+  //   e.preventDefault();
+  //   const newErrors = findFormErrors();
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-    } else {
-      // console.log(e);
-      setData({
-        ...data,
-        buttonText: 'Sending...',
-      });
-      resetForm();
-    }
-  };
+  //   if (Object.keys(newErrors).length > 0) {
+  //     setErrors(newErrors);
+  //   } else {
+  //     // console.log(e);
+  //     setData({
+  //       ...data,
+  //       buttonText: 'Sending...',
+  //     });
+  //     resetForm();
+  //   }
+  // };
 
   return (
     <Form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
@@ -112,7 +112,7 @@ const ContactForm = () => {
         <Form.Control.Feedback type="invalid">{errors.message}</Form.Control.Feedback>
       </Form.Group>
       <div data-netlify-recaptcha="true" />
-      <Button variant="primary" type="submit" onClick={formSubmit}>
+      <Button variant="primary" type="submit">
         {data.buttonText}
       </Button>
     </Form>
