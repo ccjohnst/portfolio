@@ -16,8 +16,8 @@ To deploy my portfolio, I decided to use [Netlify](https://www.netlify.com/) due
 
 ```
 nvm use 12.13.1 # IMPORTANT DUE TO COMPATABILITY ERRORS WITH RECENT NODE VERSIONS
-git clone https://github.com/ccjohnst/portfolio2
-cd portfolio2
+git clone https://github.com/ccjohnst/portfolio
+cd portfolio
 npm install
 npm start
 ```
