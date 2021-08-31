@@ -39,13 +39,14 @@ const About = () => {
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
                   I am a front-end developer from London. I am particularly passionate about
-                  Javascript and have been greatly enjoying learning Reactjs.
+                  Javascript and have been greatly enjoying learning React.
                 </p>
                 <p className="about-wrapper__info-text">
                   I have been teaching myself front-end development whilst working a busy full time
                   job, which has been a challenging, but highly enjoyable journey. Please scroll or
                   navigate to the project section of my page to see a recent selection of projects.
-                  All code can be found for my GitHub, linked below in the contact section.
+                  All code can be found on my GitHub profile, linked below in the contact icons
+                  within the footer.
                 </p>
               </div>
             </Fade>
