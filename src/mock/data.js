@@ -20,13 +20,24 @@ export const aboutData = {
 export const projectsData = [
   {
     id: nanoid(),
+    img: 'cocktailsite.png',
+    title: 'Cocktail Site',
+    info: ' A handy web-app I have made in order to find recipies for cocktails, which I created due to the frustration of not being able to find a good cocktail recipe site,',
+    info2:
+      'The website is built using GatsbyJS and makes heavy use of React Hooks and the Fetch API to consume the data served by TheCockTailDB Api.',
+    url: 'https://www.cocktail-hub.co.uk/',
+    repo: 'https://github.com/ccjohnst/cocktail-hub', // if no repo, the button will not show up
+    techs: ['Javascript', 'React', 'GatsbyJS', 'FetchAPI'],
+  },
+  {
+    id: nanoid(),
     img: 'cvbuilder.png',
     title: 'CV Builder',
     info: "A CV making tool that makes good use of React's state management and features an option to save the CV as a PDF.",
     info2: '',
     url: 'https://ccjohnst.github.io/cv-creator/',
     repo: 'https://github.com/ccjohnst/cv-creator', // if no repo, the button will not show up
-    techs: ['React', 'Javascript', 'Sass'],
+    techs: ['Javascript', 'React', 'Sass'],
   },
   {
     id: nanoid(),
