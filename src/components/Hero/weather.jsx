@@ -7,8 +7,8 @@ const useFetch = (url) => {
 
   useEffect(() => {
     fetch(url).then((response) =>
-      response.json().then((data) => {
-        const item = data['weather'][0]['icon'];
+      response.json().then((d) => {
+        const item = d.weather[0].icon;
         setData(item);
         setLoading(false);
       })
@@ -29,12 +29,7 @@ const WeatherIcon = () => {
       {loading ? (
         <div>...loading weather</div>
       ) : (
-        <img
-          width="40px"
-          height="40px"
-          src={img}
-          alt="An icon of the current image in London"
-        ></img>
+        <img width="40px" height="40px" src={img} alt="Current weather in London" />
       )}
     </>
   );
