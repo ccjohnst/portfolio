@@ -47,7 +47,7 @@ const Footer = () => {
 
           <Obfuscate
             // key={id}
-            email="mailto:christopherjohnston@protonmail.com"
+            email="christopherjohnston@protonmail.com"
           >
             <i className="fa fa-envelope fa-inverse" />
           </Obfuscate>
