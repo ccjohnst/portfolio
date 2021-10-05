@@ -13,8 +13,8 @@ import js from '../../images/techicons/Javascript-shield.svg';
 import react from '../../images/techicons/React-icon.svg';
 
 const skillItems = [
-  { skillName: 'React', subSkills: ['Node.js', 'Gatsby'], logo: react },
-  { skillName: 'Javascript', subSkills: ['JSX', 'ES6'], logo: js },
+  { skillName: 'React', subSkills: ['Next.js', 'Gatsby JS'], logo: react },
+  { skillName: 'Javascript', subSkills: ['JSX', 'ES6', 'Node.js'], logo: js },
   { skillName: 'HTML', logo: html },
   { skillName: 'CSS', subSkills: ['SCSS'], logo: css },
 ];
